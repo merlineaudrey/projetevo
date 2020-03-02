@@ -18,7 +18,7 @@ app.get('/', (req, res) => res.render('index'));
 app.get('/inscription', (req, res) => res.render('inscription'));
 
 
-mongoose.connect(process.env.MONGODB_URLSSSS'mongodb://localhost:27017/test',{useNewUrlParser:true});
+mongoose.connect(process.env.MONGODB_URL'mongodb://localhost:27017/test',{useNewUrlParser:true});
 let db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {

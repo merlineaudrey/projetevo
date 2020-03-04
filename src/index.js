@@ -15,15 +15,15 @@ app.use(express.static(path.join(__dirname,'public')));
 app.set('views' , path.join(__dirname, 'views'));
 app.set('view engine' , 'pug');
 app.get('/', (req, res) => res.render('index'));
-app.get('/inscription', (req, res) => res.render('inscription'));
+app.get('/inscription', (req, res) => res.render('inscription')); 
 
 
 mongoose.connect('mongodb://merline:mmadeleine1@cluster0-shard-00-00-xleua.mongodb.net:27017,cluster0-shard-00-01-xleua.mongodb.net:27017,cluster0-shard-00-02-xleua.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority',{useNewUrlParser:true});
 let db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
-  // we're connected!
-  console.log('nous sommes connectés')
+  
+  console.log('nous somme connectés')
 });
 
 

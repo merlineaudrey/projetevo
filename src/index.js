@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
-const port = 3000;
+const port = 3000 || process.env.PORT;
 const mongoose = require('mongoose');
 
 app.use(bodyParser.json());
@@ -25,8 +25,7 @@ db.once('open', function() {
   // we're connected!
   console.log('nous sommes connectés')
 });
-  // port
-app.set('port', (process.env.PORT || 3000));
+
 
 (require('./routes'))(app)
 

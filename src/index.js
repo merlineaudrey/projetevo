@@ -18,7 +18,7 @@ app.get('/', (req, res) => res.render('index'));
 app.get('/inscription', (req, res) => res.render('inscription'));
 
 
-mongoose.connect(process.env.MONGODB_URL,'mongo "mongodb+srv://cluster0-ax0c3.mongodb.net/test"  --username dbsteph',{useNewUrlParser:true});
+mongoose.connect('mongodb+srv://merline:mmadeleine1@cluster0-xleua.mongodb.net/test?retryWrites=true&w=majority',{useNewUrlParser:true});
 let db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
